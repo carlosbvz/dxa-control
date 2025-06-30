@@ -1,0 +1,23 @@
+{
+  "kalman": {
+    "process_noise": 0.01,
+    "measurement_noise": 0.1,
+    "initial_uncertainty": 0.1
+  },
+  "contrast": {
+    "method": "clahe",
+    "clip_limit": 2.0,
+    "tile_grid_size": [8, 8]
+  },
+  "roi": {
+    "method": "otsu",
+    "post_process": true
+  },
+  "bmd": {
+    "method": "direct"
+  },
+  "evaluation": {
+    "calculate_metrics": true,
+    "save_results": true
+  }
+} 
