@@ -15,7 +15,8 @@ from typing import Tuple, List, Optional, Dict
 import logging
 from scipy import ndimage
 from skimage import measure, morphology
-from skimage.filters import threshold_otsu, threshold_adaptive
+from skimage.filters import threshold_otsu
+from skimage.filters import threshold_local as threshold_adaptive
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)

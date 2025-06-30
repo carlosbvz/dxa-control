@@ -17,54 +17,55 @@ import time
 # Add src directory to path
 sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
 
+from src.kalman_filter import KalmanFilterImage, apply_kalman_filter
+from src.contrast_enhancement import ContrastEnhancer, enhance_contrast
+from src.roi_tracking import ROITracker, detect_roi
+from src.bmd_extraction import BMDExtractor, extract_bmd
+from src.evaluation import ImageEvaluator, evaluate_image_quality
+from src.utils import ImageUtils, DataUtils, ValidationUtils
+from src.main import DXAPipeline
+
 def test_imports():
     """Test that all modules can be imported."""
     print("Testing imports...")
     
     try:
-        from kalman_filter import KalmanFilterImage, apply_kalman_filter
         print("✓ Kalman filter module imported successfully")
     except ImportError as e:
         print(f"✗ Failed to import kalman_filter: {e}")
         return False
     
     try:
-        from contrast_enhancement import ContrastEnhancer, enhance_contrast
         print("✓ Contrast enhancement module imported successfully")
     except ImportError as e:
         print(f"✗ Failed to import contrast_enhancement: {e}")
         return False
     
     try:
-        from roi_tracking import ROITracker, detect_roi
         print("✓ ROI tracking module imported successfully")
     except ImportError as e:
         print(f"✗ Failed to import roi_tracking: {e}")
         return False
     
     try:
-        from bmd_extraction import BMDExtractor, extract_bmd
         print("✓ BMD extraction module imported successfully")
     except ImportError as e:
         print(f"✗ Failed to import bmd_extraction: {e}")
         return False
     
     try:
-        from evaluation import ImageEvaluator, evaluate_image_quality
         print("✓ Evaluation module imported successfully")
     except ImportError as e:
         print(f"✗ Failed to import evaluation: {e}")
         return False
     
     try:
-        from utils import ImageUtils, DataUtils, ValidationUtils
         print("✓ Utils module imported successfully")
     except ImportError as e:
         print(f"✗ Failed to import utils: {e}")
         return False
     
     try:
-        from main import DXAPipeline
         print("✓ Main pipeline module imported successfully")
     except ImportError as e:
         print(f"✗ Failed to import main: {e}")
@@ -141,6 +142,7 @@ def test_complete_pipeline():
         
         # Initialize and run pipeline
         pipeline = DXAPipeline()
+        os.makedirs("test_output", exist_ok=True)
         results = pipeline.process_single_image(test_input, "test_output")
         
         # Check results

@@ -78,7 +78,9 @@ class ImageUtils:
             normalize: Whether to normalize to [0, 255] range
         """
         # Create directory if it doesn't exist
-        os.makedirs(os.path.dirname(file_path), exist_ok=True)
+        dir_name = os.path.dirname(file_path)
+        if dir_name:
+            os.makedirs(dir_name, exist_ok=True)
         
         # Prepare image for saving
         if normalize and image.max() <= 1.0:
@@ -298,6 +300,19 @@ class ImageUtils:
         
         plt.show()
 
+    @staticmethod
+    def create_test_image(shape=(100, 100), noise_level=0.1):
+        """Create a synthetic test image with optional Gaussian noise."""
+        image = np.zeros(shape, dtype=np.float32)
+        # Draw a simple rectangle (simulating bone)
+        cv = shape[0] // 4
+        image[cv:-cv, cv:-cv] = 1.0
+        # Add Gaussian noise
+        noise = np.random.normal(0, noise_level, shape)
+        image += noise
+        image = np.clip(image, 0, 1)
+        return image
+
 
 class DataUtils:
     """
@@ -317,20 +332,27 @@ class DataUtils:
             format: File format ('json' or 'pickle')
         """
         # Create directory if it doesn't exist
-        os.makedirs(os.path.dirname(file_path), exist_ok=True)
+        dir_name = os.path.dirname(file_path)
+        if dir_name:
+            os.makedirs(dir_name, exist_ok=True)
         
         if format == 'json':
             # Convert numpy arrays to lists for JSON serialization
-            json_results = {}
-            for key, value in results.items():
-                if isinstance(value, np.ndarray):
-                    json_results[key] = value.tolist()
-                elif isinstance(value, np.integer):
-                    json_results[key] = int(value)
-                elif isinstance(value, np.floating):
-                    json_results[key] = float(value)
+            def convert_numpy_types(obj):
+                if isinstance(obj, np.ndarray):
+                    return obj.tolist()
+                elif isinstance(obj, np.integer):
+                    return int(obj)
+                elif isinstance(obj, np.floating):
+                    return float(obj)
+                elif isinstance(obj, dict):
+                    return {k: convert_numpy_types(v) for k, v in obj.items()}
+                elif isinstance(obj, list):
+                    return [convert_numpy_types(item) for item in obj]
                 else:
-                    json_results[key] = value
+                    return obj
+            
+            json_results = convert_numpy_types(results)
             
             with open(file_path, 'w') as f:
                 json.dump(json_results, f, indent=2)

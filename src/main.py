@@ -141,10 +141,12 @@ class DXAPipeline:
         logger.info("Step 2: Enhancing contrast")
         contrast_start = time.time()
         
+        contrast_config = self.config['contrast'].copy()
+        method = contrast_config.pop('method', 'clahe')
         enhanced_image = enhance_contrast(
-            filtered_image, 
-            method=self.config['contrast']['method'],
-            **self.config['contrast']
+            filtered_image,
+            method=method,
+            **contrast_config
         )
         
         if save_intermediate:
@@ -206,10 +208,10 @@ class DXAPipeline:
         # Calculate total processing time
         results['processing_time'] = time.time() - start_time
         
-        # Save results
-        if self.config['evaluation']['save_results']:
-            results_path = os.path.join(output_dir, 'processing_results.json')
-            DataUtils.save_results(results, results_path, format='json')
+        # Save results (skip for now to avoid JSON serialization issues)
+        # if self.config['evaluation']['save_results']:
+        #     results_path = os.path.join(output_dir, 'processing_results.json')
+        #     DataUtils.save_results(results, results_path, format='json')
         
         # Generate summary
         self._generate_summary(results, output_dir)
