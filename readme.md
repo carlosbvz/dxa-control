@@ -31,7 +31,7 @@ This project implements a comprehensive DXA (Dual-energy X-ray Absorptiometry) i
 1. Clone or download the project files
 2. Navigate to the project directory:
    ```bash
-   cd "Maestria/cursos/Sem2/SP-2141 Teoría de la detección y estimación/proyecto/code"
+   cd "./code"
    ```
 
 3. Install required dependencies:
@@ -68,7 +68,7 @@ code/
 #### Single Image Processing
 
 ```bash
-python src/main.py input_image.png output_directory
+python src/main.py data/raw/Paciente01_HE.png results/   
 ```
 
 #### Batch Processing
@@ -297,7 +297,7 @@ This project is developed for academic purposes as part of the SP-2141 course at
 ## Contact
 
 **Author:** Carlos Benavides  
-**Email:** [Your Email]  
+**Email:** carlos.benavidesviquez@ucr.ac.cr
 **Course:** SP-2141 Teoría de la detección y estimación  
 **Institution:** Universidad de Costa Rica
 
