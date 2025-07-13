@@ -307,9 +307,6 @@ This project is developed for academic purposes as part of the SP-2141 course at
 - Open source libraries (OpenCV, NumPy, SciPy, scikit-image)
 - Research community in medical image processing
 
-# Navigate to the project directory
-cd "Maestria/cursos/Sem2/SP-2141 Teoría de la detección y estimación/proyecto/code"
-
 # Install dependencies
 pip install -r requirements.txt
 
