@@ -2,25 +2,25 @@
 DXA Image Processing Summary
 ===========================
 
-Input File: data/raw/noise_HE.png
-Processing Time: 2.97 seconds
+Input File: data/raw/Paciente01_HE.png
+Processing Time: 2.63 seconds
 
 Image Information:
 - Shape: (1024, 1024)
-- Mean: 0.1350
-- Std: 0.1986
+- Mean: 0.1516
+- Std: 0.3083
 
 ROI Detection:
-- Bone Area: 294346 pixels
-- Centroid: (np.float64(475.7634620480659), np.float64(457.8856753616492))
+- Bone Area: 164916 pixels
+- Centroid: (np.float64(485.1455650149167), np.float64(449.8115101021126))
 
 BMD Analysis:
-- Mean BMD: 139.9568
-- Std BMD: 42.8590
-- Total Pixels: 294346
+- Mean BMD: 201.9186
+- Std BMD: 49.9151
+- Total Pixels: 164916
 
 Quality Metrics:
-- PSNR: 18.76 dB
-- SSIM: 0.6372
-- MSE: 0.013301
-- SNR: 6.37 dB
+- PSNR: 22.52 dB
+- SSIM: 0.6129
+- MSE: 0.005599
+- SNR: 13.24 dB
