@@ -1,0 +1,27 @@
+
+DXA Image Processing Summary
+===========================
+
+Input File: demo_paciente01/test_image.png
+Processing Time: 2.85 seconds
+Processing Mode: Classic
+
+Image Information:
+- Shape: (1024, 1024)
+- Mean: 0.1516
+- Std: 0.3083
+
+ROI Detection:
+- Bone Area: 164623 pixels
+- Centroid: (np.float64(480.600268492252), np.float64(446.4949369164697))
+
+BMD Analysis:
+- Mean BMD: 207.0375
+- Std BMD: 49.3374
+- Total Pixels: 164623
+
+Quality Metrics:
+- PSNR: 28.70 dB
+- SSIM: 0.5886
+- MSE: 0.001350
+- SNR: 19.42 dB

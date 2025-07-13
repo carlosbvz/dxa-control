@@ -25,6 +25,7 @@ from roi_tracking import ROITracker, detect_roi
 from bmd_extraction import BMDExtractor, extract_bmd
 from evaluation import ImageEvaluator, evaluate_image_quality
 from utils import ImageUtils, DataUtils, ValidationUtils
+from adaptive_control import AdaptiveControlSystem, create_adaptive_control_system
 
 # Configure logging
 logging.basicConfig(
@@ -42,14 +43,16 @@ class DXAPipeline:
     to final BMD analysis and evaluation.
     """
     
-    def __init__(self, config: Optional[Dict] = None):
+    def __init__(self, config: Optional[Dict] = None, use_adaptive_control: bool = False):
         """
         Initialize the DXA processing pipeline.
         
         Args:
             config: Configuration dictionary
+            use_adaptive_control: Whether to use adaptive control for parameter optimization
         """
         self.config = config or self._get_default_config()
+        self.use_adaptive_control = use_adaptive_control
         
         # Initialize components
         self.kalman_filter = KalmanFilterImage(**self.config.get('kalman', {}))
@@ -58,15 +61,22 @@ class DXAPipeline:
         self.bmd_extractor = BMDExtractor()
         self.evaluator = ImageEvaluator()
         
+        # Initialize adaptive control system if requested
+        if self.use_adaptive_control:
+            self.adaptive_control = create_adaptive_control_system(
+                self.config.get('adaptive_control', {})
+            )
+            logger.info("Adaptive control system initialized")
+        
         logger.info("DXA processing pipeline initialized")
     
     def _get_default_config(self) -> Dict:
         """Get default configuration."""
         return {
             'kalman': {
-                'process_noise': 0.01,
-                'measurement_noise': 0.1,
-                'initial_uncertainty': 0.1
+                'process_noise': 20,#0.01,
+                'measurement_noise': 0.01,
+                'initial_uncertainty': 5
             },
             'contrast': {
                 'method': 'clahe',
@@ -83,6 +93,18 @@ class DXAPipeline:
             'evaluation': {
                 'calculate_metrics': True,
                 'save_results': True
+            },
+            'adaptive_control': {
+                'max_iterations': 50,
+                'kalman_ranges': {
+                    'process_noise': [5, 10, 20, 30, 50],
+                    'measurement_noise': [0.001, 0.01, 0.1, 1.0],
+                    'initial_uncertainty': [1, 5, 10, 20]
+                },
+                'contrast_ranges': {
+                    'clip_limit': [1.0, 2.0, 3.0, 4.0, 5.0],
+                    'tile_grid_size': [(4, 4), (8, 8), (16, 16)]
+                }
             }
         }
     
@@ -122,41 +144,75 @@ class DXAPipeline:
             'image_info': ImageUtils.calculate_image_statistics(original_image)
         }
         
-        # Step 1: Kalman Filtering
-        logger.info("Step 1: Applying Kalman filter")
-        kalman_start = time.time()
-        
-        filtered_image = self.kalman_filter.filter_image(original_image)
-        
-        if save_intermediate:
-            kalman_path = os.path.join(output_dir, 'kalman_filtered.png')
-            ImageUtils.save_image(filtered_image, kalman_path)
-        
-        results['kalman'] = {
-            'filtered_image': filtered_image,
-            'processing_time': time.time() - kalman_start
-        }
-        
-        # Step 2: Contrast Enhancement
-        logger.info("Step 2: Enhancing contrast")
-        contrast_start = time.time()
-        
-        contrast_config = self.config['contrast'].copy()
-        method = contrast_config.pop('method', 'clahe')
-        enhanced_image = enhance_contrast(
-            filtered_image,
-            method=method,
-            **contrast_config
-        )
-        
-        if save_intermediate:
-            enhanced_path = os.path.join(output_dir, 'contrast_enhanced.png')
-            ImageUtils.save_image(enhanced_image, enhanced_path)
-        
-        results['contrast'] = {
-            'enhanced_image': enhanced_image,
-            'processing_time': time.time() - contrast_start
-        }
+        # Step 1: Parameter Optimization (if using adaptive control)
+        if self.use_adaptive_control:
+            logger.info("Step 1: Optimizing parameters using adaptive control")
+            optimization_start = time.time()
+            
+            # Run parameter optimization
+            best_kalman_params, best_contrast_params, best_result = (
+                self.adaptive_control.optimize_parameters(original_image, output_dir)
+            )
+            
+            # Use optimized parameters for processing
+            filtered_image = best_result.kalman_image
+            enhanced_image = best_result.enhanced_image
+            
+            results['optimization'] = {
+                'best_kalman_params': best_kalman_params,
+                'best_contrast_params': best_contrast_params,
+                'best_psnr': best_result.psnr,
+                'best_ssim': best_result.ssim,
+                'processing_time': time.time() - optimization_start
+            }
+            
+            results['kalman'] = {
+                'filtered_image': filtered_image,
+                'processing_time': best_result.processing_time,
+                'parameters': best_kalman_params
+            }
+            
+            results['contrast'] = {
+                'enhanced_image': enhanced_image,
+                'parameters': best_contrast_params
+            }
+            
+        else:
+            # Step 1: Kalman Filtering (classic mode)
+            logger.info("Step 1: Applying Kalman filter")
+            kalman_start = time.time()
+            
+            filtered_image = self.kalman_filter.filter_image(original_image)
+            
+            if save_intermediate:
+                kalman_path = os.path.join(output_dir, 'kalman_filtered.png')
+                ImageUtils.save_image(filtered_image, kalman_path)
+            
+            results['kalman'] = {
+                'filtered_image': filtered_image,
+                'processing_time': time.time() - kalman_start
+            }
+            
+            # Step 2: Contrast Enhancement (classic mode)
+            logger.info("Step 2: Enhancing contrast")
+            contrast_start = time.time()
+            
+            contrast_config = self.config['contrast'].copy()
+            method = contrast_config.pop('method', 'clahe')
+            enhanced_image = enhance_contrast(
+                filtered_image,
+                method=method,
+                **contrast_config
+            )
+            
+            if save_intermediate:
+                enhanced_path = os.path.join(output_dir, 'contrast_enhanced.png')
+                ImageUtils.save_image(enhanced_image, enhanced_path)
+            
+            results['contrast'] = {
+                'enhanced_image': enhanced_image,
+                'processing_time': time.time() - contrast_start
+            }
         
         # Step 3: ROI Detection
         logger.info("Step 3: Detecting regions of interest")
@@ -278,12 +334,27 @@ DXA Image Processing Summary
 
 Input File: {results['input_path']}
 Processing Time: {results['processing_time']:.2f} seconds
+Processing Mode: {'Adaptive Control' if self.use_adaptive_control else 'Classic'}
 
 Image Information:
 - Shape: {results['image_info']['shape']}
 - Mean: {results['image_info']['mean']:.4f}
 - Std: {results['image_info']['std']:.4f}
-
+"""
+        
+        # Add optimization information if using adaptive control
+        if self.use_adaptive_control and 'optimization' in results:
+            opt = results['optimization']
+            summary += f"""
+Parameter Optimization Results:
+- Best PSNR: {opt['best_psnr']:.2f} dB
+- Best SSIM: {opt['best_ssim']:.4f}
+- Optimization Time: {opt['processing_time']:.2f} seconds
+- Best Kalman Parameters: {opt['best_kalman_params']}
+- Best Contrast Parameters: {opt['best_contrast_params']}
+"""
+        
+        summary += f"""
 ROI Detection:
 - Bone Area: {results['roi']['properties']['area']} pixels
 - Centroid: {results['roi']['properties']['centroid']}
@@ -368,6 +439,7 @@ def main():
     parser.add_argument('--pattern', default='*.png', help='File pattern for batch processing')
     parser.add_argument('--config', help='Configuration file (JSON)')
     parser.add_argument('--no-intermediate', action='store_true', help='Skip saving intermediate results')
+    parser.add_argument('--adaptive', action='store_true', help='Use adaptive control for parameter optimization')
     
     args = parser.parse_args()
     
@@ -376,8 +448,8 @@ def main():
     if args.config:
         config = DataUtils.load_results(args.config, format='json')
     
-    # Initialize pipeline
-    pipeline = DXAPipeline(config)
+    # Initialize pipeline with adaptive control if requested
+    pipeline = DXAPipeline(config, use_adaptive_control=args.adaptive)
     
     # Process images
     if args.batch:

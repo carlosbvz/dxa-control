@@ -1,0 +1,902 @@
+[
+  {
+    "iteration": 1,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 1
+    },
+    "contrast_params": {
+      "clip_limit": 1.0,
+      "tile_grid_size": [
+        4,
+        4
+      ]
+    },
+    "psnr": 35.62381617326601,
+    "ssim": 0.7927707778359008,
+    "processing_time": 2.3293092250823975
+  },
+  {
+    "iteration": 2,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 1
+    },
+    "contrast_params": {
+      "clip_limit": 1.0,
+      "tile_grid_size": [
+        8,
+        8
+      ]
+    },
+    "psnr": 33.01218751117342,
+    "ssim": 0.7781883197596252,
+    "processing_time": 2.5003979206085205
+  },
+  {
+    "iteration": 3,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 1
+    },
+    "contrast_params": {
+      "clip_limit": 1.0,
+      "tile_grid_size": [
+        16,
+        16
+      ]
+    },
+    "psnr": 30.95095046996407,
+    "ssim": 0.7686444310017343,
+    "processing_time": 2.321237087249756
+  },
+  {
+    "iteration": 4,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 1
+    },
+    "contrast_params": {
+      "clip_limit": 2.0,
+      "tile_grid_size": [
+        4,
+        4
+      ]
+    },
+    "psnr": 31.378322696460145,
+    "ssim": 0.6040003896515223,
+    "processing_time": 2.215571880340576
+  },
+  {
+    "iteration": 5,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 1
+    },
+    "contrast_params": {
+      "clip_limit": 2.0,
+      "tile_grid_size": [
+        8,
+        8
+      ]
+    },
+    "psnr": 28.694466190844995,
+    "ssim": 0.5883472803537437,
+    "processing_time": 2.347853899002075
+  },
+  {
+    "iteration": 6,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 1
+    },
+    "contrast_params": {
+      "clip_limit": 2.0,
+      "tile_grid_size": [
+        16,
+        16
+      ]
+    },
+    "psnr": 26.808525388973358,
+    "ssim": 0.571164536341917,
+    "processing_time": 2.283568859100342
+  },
+  {
+    "iteration": 7,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 1
+    },
+    "contrast_params": {
+      "clip_limit": 3.0,
+      "tile_grid_size": [
+        4,
+        4
+      ]
+    },
+    "psnr": 28.321720743847592,
+    "ssim": 0.4775989283919585,
+    "processing_time": 2.202828884124756
+  },
+  {
+    "iteration": 8,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 1
+    },
+    "contrast_params": {
+      "clip_limit": 3.0,
+      "tile_grid_size": [
+        8,
+        8
+      ]
+    },
+    "psnr": 26.240978307808433,
+    "ssim": 0.4606067028005235,
+    "processing_time": 2.231011152267456
+  },
+  {
+    "iteration": 9,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 1
+    },
+    "contrast_params": {
+      "clip_limit": 3.0,
+      "tile_grid_size": [
+        16,
+        16
+      ]
+    },
+    "psnr": 24.652985894501608,
+    "ssim": 0.4434789531894773,
+    "processing_time": 2.211344003677368
+  },
+  {
+    "iteration": 10,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 1
+    },
+    "contrast_params": {
+      "clip_limit": 4.0,
+      "tile_grid_size": [
+        4,
+        4
+      ]
+    },
+    "psnr": 25.982149893748776,
+    "ssim": 0.39406470171712876,
+    "processing_time": 2.937392234802246
+  },
+  {
+    "iteration": 11,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 1
+    },
+    "contrast_params": {
+      "clip_limit": 4.0,
+      "tile_grid_size": [
+        8,
+        8
+      ]
+    },
+    "psnr": 24.484754032274203,
+    "ssim": 0.379007009962729,
+    "processing_time": 2.355236053466797
+  },
+  {
+    "iteration": 12,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 1
+    },
+    "contrast_params": {
+      "clip_limit": 4.0,
+      "tile_grid_size": [
+        16,
+        16
+      ]
+    },
+    "psnr": 23.08601656671946,
+    "ssim": 0.35891427826502215,
+    "processing_time": 3.067919969558716
+  },
+  {
+    "iteration": 13,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 1
+    },
+    "contrast_params": {
+      "clip_limit": 5.0,
+      "tile_grid_size": [
+        4,
+        4
+      ]
+    },
+    "psnr": 24.183348180618065,
+    "ssim": 0.34000686204038166,
+    "processing_time": 2.9571311473846436
+  },
+  {
+    "iteration": 14,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 1
+    },
+    "contrast_params": {
+      "clip_limit": 5.0,
+      "tile_grid_size": [
+        8,
+        8
+      ]
+    },
+    "psnr": 23.038827473704053,
+    "ssim": 0.32520346507390135,
+    "processing_time": 2.470587968826294
+  },
+  {
+    "iteration": 15,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 1
+    },
+    "contrast_params": {
+      "clip_limit": 5.0,
+      "tile_grid_size": [
+        16,
+        16
+      ]
+    },
+    "psnr": 21.853767443726987,
+    "ssim": 0.3034567382507936,
+    "processing_time": 2.375666856765747
+  },
+  {
+    "iteration": 16,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 5
+    },
+    "contrast_params": {
+      "clip_limit": 1.0,
+      "tile_grid_size": [
+        4,
+        4
+      ]
+    },
+    "psnr": 35.62381617326601,
+    "ssim": 0.7927707778359008,
+    "processing_time": 2.9712228775024414
+  },
+  {
+    "iteration": 17,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 5
+    },
+    "contrast_params": {
+      "clip_limit": 1.0,
+      "tile_grid_size": [
+        8,
+        8
+      ]
+    },
+    "psnr": 33.01218751117342,
+    "ssim": 0.7781883197596252,
+    "processing_time": 2.4219768047332764
+  },
+  {
+    "iteration": 18,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 5
+    },
+    "contrast_params": {
+      "clip_limit": 1.0,
+      "tile_grid_size": [
+        16,
+        16
+      ]
+    },
+    "psnr": 30.95095046996407,
+    "ssim": 0.7686444310017343,
+    "processing_time": 2.37388014793396
+  },
+  {
+    "iteration": 19,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 5
+    },
+    "contrast_params": {
+      "clip_limit": 2.0,
+      "tile_grid_size": [
+        4,
+        4
+      ]
+    },
+    "psnr": 31.378322696460145,
+    "ssim": 0.6040003896515223,
+    "processing_time": 2.414149761199951
+  },
+  {
+    "iteration": 20,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 5
+    },
+    "contrast_params": {
+      "clip_limit": 2.0,
+      "tile_grid_size": [
+        8,
+        8
+      ]
+    },
+    "psnr": 28.694466190844995,
+    "ssim": 0.5883472803537437,
+    "processing_time": 2.3066091537475586
+  },
+  {
+    "iteration": 21,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 5
+    },
+    "contrast_params": {
+      "clip_limit": 2.0,
+      "tile_grid_size": [
+        16,
+        16
+      ]
+    },
+    "psnr": 26.808525388973358,
+    "ssim": 0.571164536341917,
+    "processing_time": 2.2574563026428223
+  },
+  {
+    "iteration": 22,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 5
+    },
+    "contrast_params": {
+      "clip_limit": 3.0,
+      "tile_grid_size": [
+        4,
+        4
+      ]
+    },
+    "psnr": 28.321720743847592,
+    "ssim": 0.4775989283919585,
+    "processing_time": 2.381417989730835
+  },
+  {
+    "iteration": 23,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 5
+    },
+    "contrast_params": {
+      "clip_limit": 3.0,
+      "tile_grid_size": [
+        8,
+        8
+      ]
+    },
+    "psnr": 26.240978307808433,
+    "ssim": 0.4606067028005235,
+    "processing_time": 2.246248960494995
+  },
+  {
+    "iteration": 24,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 5
+    },
+    "contrast_params": {
+      "clip_limit": 3.0,
+      "tile_grid_size": [
+        16,
+        16
+      ]
+    },
+    "psnr": 24.652985894501608,
+    "ssim": 0.4434789531894773,
+    "processing_time": 2.284661054611206
+  },
+  {
+    "iteration": 25,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 5
+    },
+    "contrast_params": {
+      "clip_limit": 4.0,
+      "tile_grid_size": [
+        4,
+        4
+      ]
+    },
+    "psnr": 25.982149893748776,
+    "ssim": 0.39406470171712876,
+    "processing_time": 2.3221991062164307
+  },
+  {
+    "iteration": 26,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 5
+    },
+    "contrast_params": {
+      "clip_limit": 4.0,
+      "tile_grid_size": [
+        8,
+        8
+      ]
+    },
+    "psnr": 24.484754032274203,
+    "ssim": 0.379007009962729,
+    "processing_time": 2.3192079067230225
+  },
+  {
+    "iteration": 27,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 5
+    },
+    "contrast_params": {
+      "clip_limit": 4.0,
+      "tile_grid_size": [
+        16,
+        16
+      ]
+    },
+    "psnr": 23.08601656671946,
+    "ssim": 0.35891427826502215,
+    "processing_time": 2.4369101524353027
+  },
+  {
+    "iteration": 28,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 5
+    },
+    "contrast_params": {
+      "clip_limit": 5.0,
+      "tile_grid_size": [
+        4,
+        4
+      ]
+    },
+    "psnr": 24.183348180618065,
+    "ssim": 0.34000686204038166,
+    "processing_time": 2.299179792404175
+  },
+  {
+    "iteration": 29,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 5
+    },
+    "contrast_params": {
+      "clip_limit": 5.0,
+      "tile_grid_size": [
+        8,
+        8
+      ]
+    },
+    "psnr": 23.038827473704053,
+    "ssim": 0.32520346507390135,
+    "processing_time": 2.256903886795044
+  },
+  {
+    "iteration": 30,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 5
+    },
+    "contrast_params": {
+      "clip_limit": 5.0,
+      "tile_grid_size": [
+        16,
+        16
+      ]
+    },
+    "psnr": 21.853767443726987,
+    "ssim": 0.3034567382507936,
+    "processing_time": 2.3075878620147705
+  },
+  {
+    "iteration": 31,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 10
+    },
+    "contrast_params": {
+      "clip_limit": 1.0,
+      "tile_grid_size": [
+        4,
+        4
+      ]
+    },
+    "psnr": 35.62381617326601,
+    "ssim": 0.7927707778359008,
+    "processing_time": 2.37096905708313
+  },
+  {
+    "iteration": 32,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 10
+    },
+    "contrast_params": {
+      "clip_limit": 1.0,
+      "tile_grid_size": [
+        8,
+        8
+      ]
+    },
+    "psnr": 33.01218751117342,
+    "ssim": 0.7781883197596252,
+    "processing_time": 2.3332574367523193
+  },
+  {
+    "iteration": 33,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 10
+    },
+    "contrast_params": {
+      "clip_limit": 1.0,
+      "tile_grid_size": [
+        16,
+        16
+      ]
+    },
+    "psnr": 30.95095046996407,
+    "ssim": 0.7686444310017343,
+    "processing_time": 2.2822813987731934
+  },
+  {
+    "iteration": 34,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 10
+    },
+    "contrast_params": {
+      "clip_limit": 2.0,
+      "tile_grid_size": [
+        4,
+        4
+      ]
+    },
+    "psnr": 31.378322696460145,
+    "ssim": 0.6040003896515223,
+    "processing_time": 2.2667829990386963
+  },
+  {
+    "iteration": 35,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 10
+    },
+    "contrast_params": {
+      "clip_limit": 2.0,
+      "tile_grid_size": [
+        8,
+        8
+      ]
+    },
+    "psnr": 28.694466190844995,
+    "ssim": 0.5883472803537437,
+    "processing_time": 2.4397289752960205
+  },
+  {
+    "iteration": 36,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 10
+    },
+    "contrast_params": {
+      "clip_limit": 2.0,
+      "tile_grid_size": [
+        16,
+        16
+      ]
+    },
+    "psnr": 26.808525388973358,
+    "ssim": 0.571164536341917,
+    "processing_time": 2.447208881378174
+  },
+  {
+    "iteration": 37,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 10
+    },
+    "contrast_params": {
+      "clip_limit": 3.0,
+      "tile_grid_size": [
+        4,
+        4
+      ]
+    },
+    "psnr": 28.321720743847592,
+    "ssim": 0.4775989283919585,
+    "processing_time": 2.3555908203125
+  },
+  {
+    "iteration": 38,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 10
+    },
+    "contrast_params": {
+      "clip_limit": 3.0,
+      "tile_grid_size": [
+        8,
+        8
+      ]
+    },
+    "psnr": 26.240978307808433,
+    "ssim": 0.4606067028005235,
+    "processing_time": 2.3170759677886963
+  },
+  {
+    "iteration": 39,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 10
+    },
+    "contrast_params": {
+      "clip_limit": 3.0,
+      "tile_grid_size": [
+        16,
+        16
+      ]
+    },
+    "psnr": 24.652985894501608,
+    "ssim": 0.4434789531894773,
+    "processing_time": 2.3579459190368652
+  },
+  {
+    "iteration": 40,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 10
+    },
+    "contrast_params": {
+      "clip_limit": 4.0,
+      "tile_grid_size": [
+        4,
+        4
+      ]
+    },
+    "psnr": 25.982149893748776,
+    "ssim": 0.39406470171712876,
+    "processing_time": 2.7046749591827393
+  },
+  {
+    "iteration": 41,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 10
+    },
+    "contrast_params": {
+      "clip_limit": 4.0,
+      "tile_grid_size": [
+        8,
+        8
+      ]
+    },
+    "psnr": 24.484754032274203,
+    "ssim": 0.379007009962729,
+    "processing_time": 2.255795955657959
+  },
+  {
+    "iteration": 42,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 10
+    },
+    "contrast_params": {
+      "clip_limit": 4.0,
+      "tile_grid_size": [
+        16,
+        16
+      ]
+    },
+    "psnr": 23.08601656671946,
+    "ssim": 0.35891427826502215,
+    "processing_time": 2.5854060649871826
+  },
+  {
+    "iteration": 43,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 10
+    },
+    "contrast_params": {
+      "clip_limit": 5.0,
+      "tile_grid_size": [
+        4,
+        4
+      ]
+    },
+    "psnr": 24.183348180618065,
+    "ssim": 0.34000686204038166,
+    "processing_time": 2.810170888900757
+  },
+  {
+    "iteration": 44,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 10
+    },
+    "contrast_params": {
+      "clip_limit": 5.0,
+      "tile_grid_size": [
+        8,
+        8
+      ]
+    },
+    "psnr": 23.038827473704053,
+    "ssim": 0.32520346507390135,
+    "processing_time": 2.5581860542297363
+  },
+  {
+    "iteration": 45,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 10
+    },
+    "contrast_params": {
+      "clip_limit": 5.0,
+      "tile_grid_size": [
+        16,
+        16
+      ]
+    },
+    "psnr": 21.853767443726987,
+    "ssim": 0.3034567382507936,
+    "processing_time": 2.4802608489990234
+  },
+  {
+    "iteration": 46,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 20
+    },
+    "contrast_params": {
+      "clip_limit": 1.0,
+      "tile_grid_size": [
+        4,
+        4
+      ]
+    },
+    "psnr": 35.62381617326601,
+    "ssim": 0.7927707778359008,
+    "processing_time": 2.3608250617980957
+  },
+  {
+    "iteration": 47,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 20
+    },
+    "contrast_params": {
+      "clip_limit": 1.0,
+      "tile_grid_size": [
+        8,
+        8
+      ]
+    },
+    "psnr": 33.01218751117342,
+    "ssim": 0.7781883197596252,
+    "processing_time": 3.01717472076416
+  },
+  {
+    "iteration": 48,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 20
+    },
+    "contrast_params": {
+      "clip_limit": 1.0,
+      "tile_grid_size": [
+        16,
+        16
+      ]
+    },
+    "psnr": 30.95095046996407,
+    "ssim": 0.7686444310017343,
+    "processing_time": 2.5718069076538086
+  },
+  {
+    "iteration": 49,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 20
+    },
+    "contrast_params": {
+      "clip_limit": 2.0,
+      "tile_grid_size": [
+        4,
+        4
+      ]
+    },
+    "psnr": 31.378322696460145,
+    "ssim": 0.6040003896515223,
+    "processing_time": 2.5042991638183594
+  },
+  {
+    "iteration": 50,
+    "kalman_params": {
+      "process_noise": 5,
+      "measurement_noise": 0.001,
+      "initial_uncertainty": 20
+    },
+    "contrast_params": {
+      "clip_limit": 2.0,
+      "tile_grid_size": [
+        8,
+        8
+      ]
+    },
+    "psnr": 28.694466190844995,
+    "ssim": 0.5883472803537437,
+    "processing_time": 2.832962989807129
+  }
+]

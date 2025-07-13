@@ -1,0 +1,18 @@
+{
+  "iteration": 45,
+  "kalman_params": {
+    "process_noise": 5,
+    "measurement_noise": 0.001,
+    "initial_uncertainty": 10
+  },
+  "contrast_params": {
+    "clip_limit": 5.0,
+    "tile_grid_size": [
+      16,
+      16
+    ]
+  },
+  "psnr": 13.43992194723339,
+  "ssim": 0.710274190485765,
+  "processing_time": 0.15782713890075684
+}
