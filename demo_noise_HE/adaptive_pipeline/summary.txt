@@ -1,0 +1,34 @@
+
+DXA Image Processing Summary
+===========================
+
+Input File: demo_noise_HE/test_image.png
+Processing Time: 125.92 seconds
+Processing Mode: Adaptive Control
+
+Image Information:
+- Shape: (1024, 1024)
+- Mean: 0.1350
+- Std: 0.1986
+
+Parameter Optimization Results:
+- Best PSNR: 25.15 dB
+- Best SSIM: 0.7952
+- Optimization Time: 125.45 seconds
+- Best Kalman Parameters: {'process_noise': 5, 'measurement_noise': 0.001, 'initial_uncertainty': 1}
+- Best Contrast Parameters: {'clip_limit': 1.0, 'tile_grid_size': (16, 16)}
+
+ROI Detection:
+- Bone Area: 274460 pixels
+- Centroid: (np.float64(453.1347190847482), np.float64(436.37558842818623))
+
+BMD Analysis:
+- Mean BMD: 126.8487
+- Std BMD: 40.4984
+- Total Pixels: 274460
+
+Quality Metrics:
+- PSNR: 25.15 dB
+- SSIM: 0.7952
+- MSE: 0.003053
+- SNR: 12.76 dB
